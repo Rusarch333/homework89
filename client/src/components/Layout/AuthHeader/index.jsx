@@ -11,16 +11,14 @@ const AuthHeader = () => {
 
   return (
     <div className={styles.container}>
-      <div className={styles.loginContainer}>
-        <div className={styles.headerAuthPage}>
+        <header className={styles.headerAuthPage}>
           <Logo src={`${CONSTANTS.STATIC_IMAGES_PATH}logo.png`} alt="logo" />
           <div className={styles.linkAuthContainer}>
-            <Link to={isLoginPage ?"/registration" : "/login"} style={{ textDecoration: 'none' }}>
+            <Link to={isLoginPage ?"/registration" : "/login"}>
               <span>{isLoginPage ? 'Signup' : 'Login'}</span>
             </Link>
           </div>
-        </div>
-      </div>
+        </header>
     </div>
   );
 };
