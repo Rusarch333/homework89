@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { connect } from 'react-redux';
+import { useSelector } from 'react-redux';
 
 import styles from './Home.module.sass';
 
@@ -13,6 +13,7 @@ import CONSTANTS from '../../constants';
 const Home = (props) => {
   const [index, setIndex] = useState(0);
   const [styleName, setStyle] = useState(styles.headline__static);
+  const { isFetching } = useSelector((state) => state.userStore);
 
   useEffect(() => {
     const timeout = setInterval(() => {
@@ -25,7 +26,6 @@ const Home = (props) => {
     };
   });
 
-  const { isFetching } = props;
   const text =
     CONSTANTS.HEADER_ANIMATION_TEXT[
       index % CONSTANTS.HEADER_ANIMATION_TEXT.length
@@ -263,9 +263,4 @@ const Home = (props) => {
   );
 };
 
-const mapStateToProps = (state) => {
-  const { isFetching } = state.userStore;
-  return { isFetching };
-};
-
-export default connect(mapStateToProps, null)(Home);
+export default Home;
