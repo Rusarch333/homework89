@@ -11,6 +11,7 @@ import Card from '../../components/Card';
 
 import carouselConstants from '../../carouselConstants';
 import CONSTANTS from '../../constants';
+import ButtonGroup from '../../components/ButtonGroup';
 
 const Home = (props) => {
   const [index, setIndex] = useState(0);
@@ -218,6 +219,9 @@ const Home = (props) => {
                 images={carouselConstants.feedbackSliderImages}
                 carouselType={carouselConstants.FEEDBACK_SLIDER}
               />
+            </div>
+            <div className={styles.whiteContainer}>
+              <ButtonGroup />
             </div>
           </div>
         </>

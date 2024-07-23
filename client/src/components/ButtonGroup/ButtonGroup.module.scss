@@ -1,0 +1,18 @@
+.btnGroup {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  background-color: #f3f5fe;
+}
+.btn {
+  width: 200px;
+  padding: 20px;
+  background-color: transparent;
+  border: none;
+  text-transform: capitalize;
+}
+.active {
+  background: linear-gradient(45deg, #5a73ed 0, #3d57d5 100%);
+  color: white;
+  border-radius: 7px;
+}
