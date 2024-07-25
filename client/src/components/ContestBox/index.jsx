@@ -10,41 +10,34 @@ const ContestBox = ({ data, goToExtended }) => {
     return data.typeOfTagline;
   };
 
-  const { id, title, contestType, prize, count, createdAt } = data;
+  const handleClick = () => goToExtended(id);
+
+  const { id, title, contestType, prize, count = 0, createdAt } = data;
   return (
-    <div
-      className={styles.contestBoxContainer}
-      onClick={() => goToExtended(id)}
-    >
+    <article className={styles.contestBoxContainer}>
       <div className={styles.mainContestInfo}>
-        <div className={styles.titleAndIdContainer}>
-          <span className={styles.title}>{title}</span>
-          <span className={styles.id}>{`(#${id})`}</span>
-        </div>
-        <div className={styles.contestType}>
-          <span>{`${ucFirstLetter(
-            contestType
-          )} / ${getPreferenceContest()}`}</span>
-        </div>
-        <div className={styles.contestType}>
-          <span>
-            This is an Invitation Only Contest and is only open to those
-            Creatives who have achieved a Tier A status.
-          </span>
-        </div>
+        <h2 className={styles.title} onClick={handleClick}>
+          <span>{title}</span>
+        </h2>
+        <h3 className={styles.contestType}>
+          {`${ucFirstLetter(contestType)} / ${getPreferenceContest()}`}
+          <span>{formatDiffDate(createdAt)}</span>
+        </h3>
+        <p className={styles.contestType}>
+          This is an Invitation Only Contest and is only open to those Creatives
+          who have achieved a Tier A status.
+        </p>
         <div className={styles.prizeContainer}>
           <div className={styles.guaranteedContainer}>
-            <div>
-              <img
-                src={`${CONSTANTS.STATIC_IMAGES_PATH}smallCheck.png`}
-                alt="check"
-              />
-            </div>
+            <img
+              src={`${CONSTANTS.STATIC_IMAGES_PATH}smallCheck.png`}
+              alt="check"
+            />
             <span>Guaranteed prize</span>
           </div>
           <div className={styles.prize}>
             <img
-              src={`${CONSTANTS.STATIC_IMAGES_PATH}diamond.png`}
+              src={`${CONSTANTS.STATIC_IMAGES_PATH}ac-diamond.svg`}
               alt="diamond"
             />
             <span>{`$${prize}`}</span>
@@ -55,21 +48,27 @@ const ContestBox = ({ data, goToExtended }) => {
         <div className={styles.entriesContainer}>
           <div className={styles.entriesCounter}>
             <img
-              src={`${CONSTANTS.STATIC_IMAGES_PATH}entrieImage.png`}
+              src={`${CONSTANTS.STATIC_IMAGES_PATH}ac-user.svg`}
               alt="logo"
             />
-            <span>{count}</span>
+            <span>Entries</span>
           </div>
-          <span>Entries</span>
+          <span>{count}</span>
         </div>
         <div className={styles.timeContainer}>
+          <div className={styles.timePosted}>
+            <img
+              src={`${CONSTANTS.STATIC_IMAGES_PATH}ac-time.svg`}
+              alt="logo"
+            />
+            <span>Posted</span>
+          </div>
           <span className={styles.timeContest}>
             {formatDiffDate(createdAt)}
           </span>
-          <span>Going</span>
         </div>
       </div>
-    </div>
+    </article>
   );
 };
 

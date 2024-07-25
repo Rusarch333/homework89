@@ -1,11 +1,16 @@
+@use '/src/common/styles/colors' as *
+  
 .contestBoxContainer
+  max-width: 936px
   display: flex
   align-items: center
   justify-content: space-between
-  background-color: #f9fafb
-  padding: 30px 20px 10px 20px
-  margin-bottom: 15px
-  @media(max-width: 400px)
+  background-color: #fff
+  padding: 32px
+  margin-bottom: 24px
+  box-shadow: 0 8px 40px rgb(0 0 0 / .04)
+  border-radius: 24px
+  @media(max-width: 991px)
     flex-direction: column
 
   .mainContestInfo
@@ -26,6 +31,10 @@
         display: flex
         justify-content: flex-start
 
+        img
+          height: 18px
+          width: 18px
+
         span
           color: #465a89
           font-size: 15px
@@ -37,13 +46,12 @@
         align-items: center
         margin-right: 20px
 
-        div
-          display: flex
-          justify-content: center
-          align-items: center
-          height: 14px
-          width: 14px
-          border-radius: 7px
+        img
+          box-sizing: border-box
+          height: 18px
+          width: 18px
+          padding: 3px
+          border-radius: 50%
           background-color: #8aca6b
           margin-right: 5px
 
@@ -58,32 +66,21 @@
         font-size: 14px
         color: #4e618d
 
-    .titleAndIdContainer
-      width: 100%
-      display: flex
-      justify-content: flex-start
-      align-items: center
-
-      .id
-        color: #6e7072
-        font-size: 14px
-
-      .title
-        color: #556da5
-        font-size: 18px
-        font-weight: 500
-        margin-right: 20px
+    .title
+      color: $blue
+      font-size: 20px
+      font-weight: 700
+      margin: 0 0 10px 0
+      cursor: pointer
 
   .entryAndTimeContainer
     display: flex
+    flex-direction: column
     padding: 10px
-    background-color: white
-    border-left: 1px solid #eee
-    border-right: 1px solid #eee
-    border-bottom: 1px solid #eee
-    box-shadow: 2px 2px rgba(0, 0, 0, 0.2)
-    @media(max-width: 400px)
+    
+    @media(max-width: 991px)
       margin-top: 10px
+      flex-direction: row
       align-self: flex-start
 
     .timeContainer
@@ -92,7 +89,6 @@
       justify-content: center
       align-items: center
       padding: 0 20px
-      border-left: 1px solid #46568a
 
       .timeContest
         font-size: 18px
@@ -109,7 +105,6 @@
       justify-content: center
       align-items: center
       padding: 0 20px
-      border-right: 1px solid #46568a
 
       span
         font-size: 15px
