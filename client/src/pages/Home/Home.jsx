@@ -1,17 +1,18 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
-
 import cardsData from './data/whySquadhelp.json';
 import styles from './Home.module.sass';
-
 import SlideBar from '../../components/SlideBar/SlideBar';
 import Spinner from '../../components/Spinner/Spinner';
 import Card from '../../components/Card';
-
 import carouselConstants from '../../carouselConstants';
 import CONSTANTS from '../../constants';
 import ButtonGroup from '../../components/ButtonGroup';
+import NamingContestSteps from '../../components/NamingContestSteps';
+import NamingContestStepsText from './data/NamingContestSteps.json'
+
+// ?????????????????
 
 const Home = (props) => {
   const [index, setIndex] = useState(0);
@@ -34,6 +35,7 @@ const Home = (props) => {
       index % CONSTANTS.HEADER_ANIMATION_TEXT.length
     ];
   const showCard = (card) => <Card key={card.alt} card={card} />;
+
   return (
     <>
       {isFetching ? (
@@ -119,6 +121,15 @@ const Home = (props) => {
               </div>
             </div>
             <h2>How Do Name Contest Work?</h2>
+            <NamingContestSteps
+              stylesContainer={'whiteContainer'}
+              stepDirectionStyles={'stepReverse'}
+              isImageBeforeContent={false}
+              imageName={`1-compressed.gif`}
+              stepContent={NamingContestStepsText.stepOneContent}
+              content={[NamingContestStepsText.stepOneContentOne, NamingContestStepsText.stepOneContentTwo]}
+            />
+            {/* 
             <div className={styles.whiteContainer}>
               <div className={styles.stepReverse}>
                 <div>
@@ -143,8 +154,16 @@ const Home = (props) => {
                   alt="compressed"
                 />
               </div>
-            </div>
-            <div className={styles.greenContainer}>
+            </div> */}
+            <NamingContestSteps
+              stylesContainer={'greenContainer'}
+              stepDirectionStyles={'stepDirect'} // ?????????????????????????????????????????????????
+              isImageBeforeContent={true}
+              imageName={`2-compressed-new.gif`}
+              stepContent={NamingContestStepsText.stepTwoContent}
+              content={[NamingContestStepsText.stepTwoContentOne, NamingContestStepsText.stepTwoContentTwo]}
+            />
+            {/* <div className={styles.greenContainer}>
               <div className={styles.step}>
                 <img
                   src={`${CONSTANTS.STATIC_IMAGES_PATH}gif/2-compressed-new.gif`}
@@ -166,8 +185,16 @@ const Home = (props) => {
                   </p>
                 </div>
               </div>
-            </div>
-            <div className={styles.greyContainer}>
+            </div> */}
+            <NamingContestSteps
+              stylesContainer={'greyContainer'}
+              stepDirectionStyles={'stepReverse'} // ?????????????????????????????????????????????????
+              isImageBeforeContent={false}
+              imageName={`3-compressed.gif`}
+              stepContent={NamingContestStepsText.stepThreeContent}
+              content={[NamingContestStepsText.stepThreeContentOne, NamingContestStepsText.stepThreeContentTwo, NamingContestStepsText.stepThreeContentThree]}
+            />
+            {/* <div className={styles.greyContainer}>
               <div className={styles.stepReverse}>
                 <div>
                   <h3>Step 3: Rate Entries & Brainstorm with Creatives</h3>
@@ -194,7 +221,7 @@ const Home = (props) => {
                   alt="compressed"
                 />
               </div>
-            </div>
+            </div> */}
             <div className={styles.headerBar}>
               <h3>Names For Sale</h3>
               <p className={styles.blueUnderline}>
