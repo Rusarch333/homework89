@@ -3,7 +3,7 @@ import CONSTANTS from '../../constants';
 import SelectInput from '../SelectInput/SelectInput';
 import FormInput from '../FormInput/FormInput';
 import styles from '../ContestForm/ContestForm.module.sass';
-import Spinner from '../Spinner/Spinner';
+import Spinner from '../Spinner';
 
 const OptionalSelects = props => {
   if (props.isFetching) {

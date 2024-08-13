@@ -5,7 +5,7 @@ import CONSTANTS from '../../constants';
 import { getDataForContest } from '../../store/slices/dataForContestSlice';
 import styles from './ContestForm.module.sass';
 import withRouter from '../../hocs/withRouter';
-import Spinner from '../Spinner/Spinner';
+import Spinner from '../Spinner';
 import FormInput from '../FormInput/FormInput';
 import SelectInput from '../SelectInput/SelectInput';
 import FieldFileInput from '../InputComponents/FieldFileInput/FieldFileInput';

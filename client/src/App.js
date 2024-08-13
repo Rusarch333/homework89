@@ -1,25 +1,25 @@
 import React, { Component } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import './App.css';
-import { ToastContainer } from 'react-toastify';
-import Router from './router';
-import LoginPage from './pages/LoginPage/LoginPage';
-import RegistrationPage from './pages/RegistrationPage/RegistrationPage';
-import Payment from './pages/Payment/Payment';
-import StartContestPage from './pages/StartContestPage/StartContestPage';
-import Dashboard from './pages/Dashboard/Dashboard';
-import NotFound from './components/NotFound/NotFound';
-import Home from './pages/Home/Home';
-import ContestPage from './pages/ContestPage/ContestPage';
-import UserProfile from './pages/UserProfile/UserProfile';
 import 'react-toastify/dist/ReactToastify.css';
-import ContestCreationPage from './pages/ContestCreation/ContestCreationPage';
-import CONSTANTS from './constants';
+import { ToastContainer } from 'react-toastify';
 import browserHistory from './browserHistory';
-import ChatContainer from './components/Chat/ChatComponents/ChatContainer/ChatContainer';
-import Layout from './pages/Layout/Layout';
-import OnlyNotAuthorizedUserRoute from './components/Routes/OnlyNotAuthorizedUserRoute/OnlyNotAuthorizedUserRoute';
-import PrivateRoute from './components/Routes/PrivateRoute/PrivateRoute';
+import Router from './router';
+import OnlyNotAuthorizedUserRoute from './components/Routes/OnlyNotAuthorizedUserRoute';
+import PrivateRoute from './components/Routes/PrivateRoute';
+import Home from './pages/Home';
+import NotFound from './components/NotFound';
+import RegistrationPage from './pages/RegistrationPage';
+import LoginPage from './pages/LoginPage';
+import UserProfile from './pages/UserProfile';
+import Payment from './pages/Payment';
+import Dashboard from './pages/Dashboard';
+import ContestPage from './pages/ContestPage';
+import ContestCreationPage from './pages/ContestCreationPage';
+import StartContestPage from './pages/StartContestPage';
+import ChatContainer from './components/Chat/ChatComponents/ChatContainer';
+import Layout from './pages/Layout';
+import CONSTANTS from './constants';
 
 class App extends Component {
   render() {

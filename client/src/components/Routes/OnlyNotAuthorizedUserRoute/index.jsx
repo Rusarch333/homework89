@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate, Outlet } from 'react-router-dom';
 import { getUser } from '../../../store/slices/userSlice';
-import Spinner from '../../Spinner/Spinner';
+import Spinner from '../../Spinner';
 
 const OnlyNotAuthorizedUserRoute = () => {
   const navigate = useNavigate();
