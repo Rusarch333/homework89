@@ -10,7 +10,7 @@ import carouselConstants from '../../carouselConstants';
 import CONSTANTS from '../../constants';
 import ButtonGroup from '../../components/ButtonGroup';
 import NamingContestSteps from '../../components/NamingContestSteps';
-import NamingContestStepsText from './data/NamingContestSteps.json'
+import NamingContestStepsText from './data/NamingContestSteps.json';
 
 // ?????????????????
 
@@ -127,7 +127,10 @@ const Home = (props) => {
               isImageBeforeContent={false}
               imageName={`1-compressed.gif`}
               stepContent={NamingContestStepsText.stepOneContent}
-              content={[NamingContestStepsText.stepOneContentOne, NamingContestStepsText.stepOneContentTwo]}
+              content={[
+                NamingContestStepsText.stepOneContentOne,
+                NamingContestStepsText.stepOneContentTwo,
+              ]}
             />
             {/* 
             <div className={styles.whiteContainer}>
@@ -161,7 +164,10 @@ const Home = (props) => {
               isImageBeforeContent={true}
               imageName={`2-compressed-new.gif`}
               stepContent={NamingContestStepsText.stepTwoContent}
-              content={[NamingContestStepsText.stepTwoContentOne, NamingContestStepsText.stepTwoContentTwo]}
+              content={[
+                NamingContestStepsText.stepTwoContentOne,
+                NamingContestStepsText.stepTwoContentTwo,
+              ]}
             />
             {/* <div className={styles.greenContainer}>
               <div className={styles.step}>
@@ -192,7 +198,11 @@ const Home = (props) => {
               isImageBeforeContent={false}
               imageName={`3-compressed.gif`}
               stepContent={NamingContestStepsText.stepThreeContent}
-              content={[NamingContestStepsText.stepThreeContentOne, NamingContestStepsText.stepThreeContentTwo, NamingContestStepsText.stepThreeContentThree]}
+              content={[
+                NamingContestStepsText.stepThreeContentOne,
+                NamingContestStepsText.stepThreeContentTwo,
+                NamingContestStepsText.stepThreeContentThree,
+              ]}
             />
             {/* <div className={styles.greyContainer}>
               <div className={styles.stepReverse}>
