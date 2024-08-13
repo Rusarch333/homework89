@@ -4,10 +4,11 @@ import styles from './NamingContestSteps.module.sass';
 import CONSTANTS from '../../constants';
 
 const NamingContestSteps = ({
-  stylesContainer,
-  stepDirectionStyles,
-  isImageBeforeContent,
+  stylesContainer = 'whiteContainer',
+  stepDirectionStyles = 'stepReverse',
+  isImageBeforeContent = false,
   imageName,
+  imageAlt = 'compressed',
   stepContent,
   content,
 }) => {
@@ -24,17 +25,17 @@ const NamingContestSteps = ({
         {isImageBeforeContent && (
           <img
             src={`${CONSTANTS.STATIC_IMAGES_PATH}gif/${imageName}`}
-            alt="compressed"
+            alt={imageAlt}
           />
         )}
         <div>
           <h3>{stepContent}</h3>
           {content.map(showContent)}
         </div>
-        {!isImageBeforeContent && ( // ???????????????????????
+        {isImageBeforeContent === false && (
           <img
             src={`${CONSTANTS.STATIC_IMAGES_PATH}gif/${imageName}`}
-            alt="compressed"
+            alt={imageAlt}
           />
         )}
       </div>
@@ -42,6 +43,14 @@ const NamingContestSteps = ({
   );
 };
 
-// NamingContestSteps.propTypes = {};
+NamingContestSteps.propTypes = {
+  stylesContainer: PropTypes.string,
+  stepDirectionStyles: PropTypes.string,
+  isImageBeforeContent: PropTypes.bool,
+  imageName: PropTypes.string.isRequired,
+  imageAlt: PropTypes.string,
+  stepContent: PropTypes.string.isRequired,
+  content: PropTypes.arrayOf(PropTypes.string).isRequired,
+};
 
 export default NamingContestSteps;
