@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './ContestBox.module.sass';
-import CONSTANTS from '../../constants';
 import { formatDiffDate, ucFirstLetter } from '../../utils/functions';
+import CONSTANTS from '../../constants';
 
 const ContestBox = ({ data, goToExtended }) => {
   const getPreferenceContest = () => {
@@ -19,17 +19,22 @@ const ContestBox = ({ data, goToExtended }) => {
         <h2 className={styles.title} onClick={handleClick}>
           <span>{title}</span>
         </h2>
-        <h3 className={styles.contestType}>
-          {`${ucFirstLetter(contestType)} / ${getPreferenceContest()}`}
-          <span>{formatDiffDate(createdAt)}</span>
+        <h3 className={styles.additionalInfo}>
+          <span className={styles.contestCategory}>{`${ucFirstLetter(
+            contestType
+          )} / ${getPreferenceContest()}`}</span>
+          <span className={styles.formatDiffDate}>
+            {formatDiffDate(createdAt)}
+          </span>
         </h3>
-        <p className={styles.contestType}>
+        <p className={styles.contestContent}>
           This is an Invitation Only Contest and is only open to those Creatives
           who have achieved a Tier A status.
         </p>
         <div className={styles.prizeContainer}>
           <div className={styles.guaranteedContainer}>
             <img
+              className={styles.contestIcon}
               src={`${CONSTANTS.STATIC_IMAGES_PATH}smallCheck.png`}
               alt="check"
             />
@@ -37,6 +42,7 @@ const ContestBox = ({ data, goToExtended }) => {
           </div>
           <div className={styles.prize}>
             <img
+              className={styles.contestIcon}
               src={`${CONSTANTS.STATIC_IMAGES_PATH}ac-diamond.svg`}
               alt="diamond"
             />
@@ -51,9 +57,9 @@ const ContestBox = ({ data, goToExtended }) => {
               src={`${CONSTANTS.STATIC_IMAGES_PATH}ac-user.svg`}
               alt="logo"
             />
-            <span>Entries</span>
+            <span className={styles.entries}>Entries</span>
           </div>
-          <span>{count}</span>
+          <span className={styles.entriesSpan}>{count}</span>
         </div>
         <div className={styles.timeContainer}>
           <div className={styles.timePosted}>
@@ -61,7 +67,7 @@ const ContestBox = ({ data, goToExtended }) => {
               src={`${CONSTANTS.STATIC_IMAGES_PATH}ac-time.svg`}
               alt="logo"
             />
-            <span>Posted</span>
+            <span className={styles.timeLeft}>Time passed</span>
           </div>
           <span className={styles.timeContest}>
             {formatDiffDate(createdAt)}

@@ -4,12 +4,14 @@
   max-width: 936px
   display: flex
   align-items: center
-  justify-content: space-between
+  justify-content: flex-end
+  color: $lightGray
   background-color: #fff
   padding: 32px
   margin-bottom: 24px
   box-shadow: 0 8px 40px rgb(0 0 0 / .04)
   border-radius: 24px
+  font-family: "Product Sans", sans-serif
   @media(max-width: 991px)
     flex-direction: column
 
@@ -32,13 +34,15 @@
         justify-content: flex-start
 
         img
-          height: 18px
-          width: 18px
+          height: 22px
+          width: 22px
 
         span
-          color: #465a89
-          font-size: 15px
-          margin-left: 8px
+          margin-left: 0.5rem
+          color: $lightGray
+          font-size: 1rem
+          vertical-align: middle
+          line-height: 1.5
 
       .guaranteedContainer
         display: flex
@@ -48,8 +52,8 @@
 
         img
           box-sizing: border-box
-          height: 18px
-          width: 18px
+          height: 22px
+          width: 22px
           padding: 3px
           border-radius: 50%
           background-color: #8aca6b
@@ -59,19 +63,28 @@
           color: #6e7072
           font-size: 13px
 
-    .contestType
-      margin-top: 5px
-
-      span
-        font-size: 14px
-        color: #4e618d
-
     .title
-      color: $blue
-      font-size: 20px
+      margin: 0 0 0.63rem 0
+      color: rgb(13, 110, 253)
+      font-size: 1.38rem
       font-weight: 700
-      margin: 0 0 10px 0
       cursor: pointer
+
+    .additionalInfo
+      margin-top: 0.63rem
+    
+    .contestCategory
+      color: rgb(25, 24, 74)
+      font-size: 0.88rem
+
+    .formatDiffDate
+      margin: 0.94rem
+      color: $lightGray
+      font-size: 1rem
+
+    .contestContent
+      margin-top: 0.94rem
+      margin-bottom: 2.5rem
 
   .entryAndTimeContainer
     display: flex
@@ -83,33 +96,21 @@
       flex-direction: row
       align-self: flex-start
 
-    .timeContainer
-      display: flex
-      flex-direction: column
-      justify-content: center
-      align-items: center
-      padding: 0 20px
-
-      .timeContest
-        font-size: 18px
-        color: #46568a
-
-      span
-        font-size: 15px
-        color: #8c8e92
-        margin-top: 3px
-
     .entriesContainer
       display: flex
       flex-direction: column
       justify-content: center
-      align-items: center
+      align-items: flex-start
       padding: 0 20px
 
+      .entriesSpan
+        margin-top: 0.63rem
+        margin-bottom: 3.75rem
+
       span
-        font-size: 15px
-        color: #8c8e92
-        margin-top: 3px
+        color: black
+        font-size: 1.5rem
+        font-weight: bold // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
       .entriesCounter
         display: flex
@@ -120,5 +121,26 @@
           margin-right: 5px
 
         span
-          font-size: 18px
-          color: #46568a
+          margin-left: 0.31rem
+          color: #637CF7
+          font-size: 1rem
+          font-weight: bold
+          
+    .timeContainer
+      display: flex
+      flex-direction: column
+      align-items: flex-start
+      padding: 0 20px
+
+      .timeContest
+        margin-top: 0.63rem
+        color: black
+        font-size: 1.5rem
+        font-weight: bold
+
+      span
+        margin-left: 0.31rem
+        margin-top: 3px
+        color: #F49300
+        font-size: 1rem
+        font-weight: bold
