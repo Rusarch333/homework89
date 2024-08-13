@@ -11,16 +11,19 @@ class ContestsContainer extends React.Component {
     window.removeEventListener('scroll', this.scrollHandler);
   }
 
-  scrollHandler = () => {
-    if (
-      window.innerHeight + document.documentElement.scrollTop ===
-      document.documentElement.offsetHeight
-    ) {
-      if (this.props.haveMore) {
-        this.props.loadMore(this.props.children.length);
-      }
-    }
-  };
+  // Вимкнув, для демонстрації дублює постійно контести зі списку при
+  // скроллі, створюючи безкінечний список контестів
+
+  // scrollHandler = () => {
+  //   if (
+  //     window.innerHeight + document.documentElement.scrollTop ===
+  //     document.documentElement.offsetHeight
+  //   ) {
+  //     if (this.props.haveMore) {
+  //       this.props.loadMore(this.props.children.length);
+  //     }
+  //   }
+  // };
 
   render () {
     const { isFetching } = this.props;

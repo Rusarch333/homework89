@@ -59,7 +59,7 @@ const ContestBox = ({ data, goToExtended }) => {
             />
             <span className={styles.entries}>Entries</span>
           </div>
-          <span className={styles.entriesSpan}>{count}</span>
+          <span className={styles.entriesCount}>{count}</span>
         </div>
         <div className={styles.timeContainer}>
           <div className={styles.timePosted}>
