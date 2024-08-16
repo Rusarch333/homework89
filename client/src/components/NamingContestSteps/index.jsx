@@ -1,5 +1,4 @@
 import PropTypes from 'prop-types';
-import cx from 'classnames';
 import styles from './NamingContestSteps.module.sass';
 import CONSTANTS from '../../constants';
 
@@ -12,7 +11,6 @@ const NamingContestSteps = ({
   stepContent,
   content,
 }) => {
-  const stepClass = cx(styles.step, styles[stepDirectionStyles]);
   const showContent = (item, index) => (
     <p key={index}>
       <i className={'fas fa-check'} />
@@ -21,7 +19,7 @@ const NamingContestSteps = ({
   );
   return (
     <div className={styles[stylesContainer]}>
-      <div className={stepClass}>
+      <div className={styles[stepDirectionStyles]}>
         {isImageBeforeContent && (
           <img
             src={`${CONSTANTS.STATIC_IMAGES_PATH}gif/${imageName}`}

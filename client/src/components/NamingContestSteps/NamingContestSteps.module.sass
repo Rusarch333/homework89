@@ -11,50 +11,43 @@
   background-color: #28D2D0
 .blueContainer
   @include innerContainer
-  background-color: #2B62EC
   color: white
+  background-color: #2B62EC
 
-.step
+.stepDirect,
+.stepReverse
   @include stepCard
-  max-width: auto
+  display: flex
+  flex-direction: row
+  justify-content: space-around
   padding: 2.5rem 0
   margin: 0
   div
-    display: flex
-    flex-direction: column
-    justify-content: flex-start
-    align-items: flex-start
     margin: 5.63rem 0 1.88rem 0
   p
     justify-content: flex-start
   img
     width: 100%
-  @media screen and (max-width: 950px)
-    display: flex
-    flex-direction: column
-    justify-content: flex-start
-    align-items: center
-    padding: 0
 
 .stepDirect
-  flex-direction: row
-  justify-content: space-around
   align-items: center
   color: white
   div
     max-width: 540px
+  @media screen and (max-width: 823px)
+      flex-direction: column
+      justify-content: flex-start
 
 .stepReverse
+  align-items: flex-start
+  padding: 40px 0
+  h3
+    text-align: left
   div
     padding: 0 5rem
     max-width: 540px
     width: 100%
-    @media (max-width: 720px)
-      padding: 0
-  img
-    @media screen and (max-width: 414px)
-    padding: 0
-
-  @media screen and (min-width: 950px)
-    flex-direction: row
-    justify-content: space-around
+  @media screen and (max-width: 950px)
+    flex-direction: column-reverse
+    justify-content: flex-start
+    align-items: center
