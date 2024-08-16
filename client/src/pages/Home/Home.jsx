@@ -1,16 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
-import cardsData from './data/whySquadhelp.json';
 import styles from './Home.module.sass';
+import cardsData from './data/whySquadhelp.json';
 import SlideBar from '../../components/SlideBar/SlideBar';
 import Spinner from '../../components/Spinner/Spinner';
 import Card from '../../components/Card';
-import carouselConstants from '../../carouselConstants';
-import CONSTANTS from '../../constants';
-import CONSTANTS_HOME from './constants';
 import ButtonGroup from '../../components/ButtonGroup';
 import NamingContestSteps from '../../components/NamingContestSteps';
+import CONSTANTS from '../../constants';
+import carouselConstants from '../../carouselConstants';
+import CONSTANTS_HOME from './constants';
 
 const Home = (props) => {
   const [index, setIndex] = useState(0);
