@@ -8,11 +8,9 @@ import Spinner from '../../components/Spinner/Spinner';
 import Card from '../../components/Card';
 import carouselConstants from '../../carouselConstants';
 import CONSTANTS from '../../constants';
+import CONSTANTS_HOME from './constants';
 import ButtonGroup from '../../components/ButtonGroup';
 import NamingContestSteps from '../../components/NamingContestSteps';
-import NamingContestStepsText from './data/NamingContestSteps.json';
-
-// ?????????????????
 
 const Home = (props) => {
   const [index, setIndex] = useState(0);
@@ -35,6 +33,28 @@ const Home = (props) => {
       index % CONSTANTS.HEADER_ANIMATION_TEXT.length
     ];
   const showCard = (card) => <Card key={card.alt} card={card} />;
+
+  const showNamingContestSteps = ([
+    id,
+    stylesContainer,
+    stepDirectionStyles,
+    isImageBeforeContent,
+    imageName,
+    stepContent,
+    content,
+  ]) => {
+    return (
+      <NamingContestSteps
+        key={id}
+        stylesContainer={stylesContainer}
+        stepDirectionStyles={stepDirectionStyles}
+        isImageBeforeContent={isImageBeforeContent}
+        imageName={imageName}
+        stepContent={stepContent}
+        content={content}
+      />
+    );
+  };
 
   return (
     <>
@@ -121,7 +141,8 @@ const Home = (props) => {
               </div>
             </div>
             <h2>How Do Name Contest Work?</h2>
-            <NamingContestSteps
+            {CONSTANTS_HOME.NAMING_CONTEST_STEPS.map(showNamingContestSteps)}
+            {/* <NamingContestSteps
               stylesContainer={'whiteContainer'}
               stepDirectionStyles={'stepReverse'}
               isImageBeforeContent={false}
@@ -132,6 +153,29 @@ const Home = (props) => {
                 NamingContestStepsText.stepOneContentTwo,
               ]}
             />
+            <NamingContestSteps
+              stylesContainer={'greenContainer'}
+              stepDirectionStyles={'stepDirect'} // ?????????????????????????????????????????????????
+              isImageBeforeContent={true}
+              imageName={`2-compressed-new.gif`}
+              stepContent={NamingContestStepsText.stepTwoContent}
+              content={[
+                NamingContestStepsText.stepTwoContentOne,
+                NamingContestStepsText.stepTwoContentTwo,
+              ]}
+            />
+            <NamingContestSteps
+              stylesContainer={'greyContainer'}
+              stepDirectionStyles={'stepReverse'} // ?????????????????????????????????????????????????
+              isImageBeforeContent={false}
+              imageName={`3-compressed.gif`}
+              stepContent={NamingContestStepsText.stepThreeContent}
+              content={[
+                NamingContestStepsText.stepThreeContentOne,
+                NamingContestStepsText.stepThreeContentTwo,
+                NamingContestStepsText.stepThreeContentThree,
+              ]}
+            /> */}
             {/* 
             <div className={styles.whiteContainer}>
               <div className={styles.stepReverse}>
@@ -158,17 +202,6 @@ const Home = (props) => {
                 />
               </div>
             </div> */}
-            <NamingContestSteps
-              stylesContainer={'greenContainer'}
-              stepDirectionStyles={'stepDirect'} // ?????????????????????????????????????????????????
-              isImageBeforeContent={true}
-              imageName={`2-compressed-new.gif`}
-              stepContent={NamingContestStepsText.stepTwoContent}
-              content={[
-                NamingContestStepsText.stepTwoContentOne,
-                NamingContestStepsText.stepTwoContentTwo,
-              ]}
-            />
             {/* <div className={styles.greenContainer}>
               <div className={styles.step}>
                 <img
@@ -192,18 +225,6 @@ const Home = (props) => {
                 </div>
               </div>
             </div> */}
-            <NamingContestSteps
-              stylesContainer={'greyContainer'}
-              stepDirectionStyles={'stepReverse'} // ?????????????????????????????????????????????????
-              isImageBeforeContent={false}
-              imageName={`3-compressed.gif`}
-              stepContent={NamingContestStepsText.stepThreeContent}
-              content={[
-                NamingContestStepsText.stepThreeContentOne,
-                NamingContestStepsText.stepThreeContentTwo,
-                NamingContestStepsText.stepThreeContentThree,
-              ]}
-            />
             {/* <div className={styles.greyContainer}>
               <div className={styles.stepReverse}>
                 <div>
